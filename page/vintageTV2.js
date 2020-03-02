@@ -78,7 +78,7 @@ function imageDown(){
  		i--;
 		imageSpot.src = srcs.source[i];
 		modalImage.src = modalSrcs.source[i];
-	}else if(i == 0){
+	}else if(i <= 0){
 		i = (srcs.source.length - 1);
 		imageSpot.src = srcs.source[i];
 		modalImage.src = modalSrcs.source[i];
