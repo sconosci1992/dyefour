@@ -46,8 +46,9 @@ let srcs = {
 			  './finalEdit/37.png']
 }
 
-let i = 0;
+let i = -1;
 
+//displays the static screen between images
 function static(){
 	gifSpot.classList.toggle("show");
 	setTimeout(function(){gifSpot.classList.toggle("show");}, 300);
@@ -55,10 +56,13 @@ function static(){
 	gifSpot.src = "static.gif";
 }
 
+//changes images moving towards the end of the array
 function imageUp(){
 	static()
 	if(i >= srcs.source.length - 1){
 		i = 0;
+		imageSpot.src = srcs.source[i];
+		modalImage.src = modalSrcs.source[i];
 	}else if(i < srcs.source.length - 1){
 		i++;
 		imageSpot.src = srcs.source[i];
@@ -66,6 +70,8 @@ function imageUp(){
 	}
 };
 
+
+//changes images moving towards the start of the array
 function imageDown(){
 	static()
 	if(i > 0){
